@@ -8,7 +8,6 @@ import entryRoutes from './routes/entryRoutes.js';
 
 dotenv.config();
 
-connectDB();
 
 const app = express();
 app.use(express.json());
@@ -16,6 +15,7 @@ app.use(cors({
   origin: 'https://daily-diary-frontend-eight.vercel.app'
 } ));
 
+connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/entries', entryRoutes);
 
